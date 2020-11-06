@@ -18,23 +18,19 @@
                var i = parseFloat(abc.indexOf(c.toLowerCase()));
 
                if (i != -1) {
-                   /*
-                   if (i >= 25) {
-                       return abc[0];
-                   }
-                   */
                    var pos = i;
                    //var something = 25 - i;
                    //console.log(something);
                    //Aqui va otra condición
                    //finalmente iria esto
                    //return abc[25 - i];
-
                    if (action) {
                        //cifrando
                        if (i + parseFloat(desp) > 26) {
-                           console.log(26 - i + parseFloat(desp));
-                           return abc[25 - i + parseFloat(desp)];
+                           let s = i + parseFloat(desp);
+                           let ff = Math.abs(l - s);
+                           console.log(ff);
+                           return abc[ff];
                        }else{
                            pos += parseFloat(desp);
                        }
@@ -75,8 +71,14 @@
 
  //crear las funciones decodificar y codificar
  function codificar() {
-     document.getElementById("resultado").innerHTML = 
-     cesar.encode(document.getElementById("cadena").value, document.getElementById("mod").value);
+     let regex = /^[0-9]+$/ig;
+     let txt = document.getElementById("mod").value;
+     if (regex.test(txt)) {
+        document.getElementById("resultado").innerHTML = 
+        cesar.encode(document.getElementById("cadena").value, txt); 
+     } else {
+        alert("Plz no introduzcas numeros negativos o con punto decimal, me da ansiedad unu");
+     }
  }
 
  function decodificar() {
