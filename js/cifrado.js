@@ -86,6 +86,16 @@
  }
 
  function decodificar() {
-    document.getElementById("resultado").innerHTML = 
-    cesar.decode(document.getElementById("cadena").value, document.getElementById("mod").value);
+    let regex = /^[0-9]+$/ig;
+    let txt = document.getElementById("mod").value;
+    let a = $(".add");
+    if (document.getElementById("cadena").value == "") {
+       //document. .innerHTML = '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>¡Advertencia!</strong> Favor de introducir algún texto al campo de texto</div>';
+       a[0].innerHTML += '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>¡Advertencia!</strong> Favor de introducir algún texto al campo de texto</div>';
+   }else if (regex.test(txt)) {
+       document.getElementById("resultado").innerHTML = 
+       cesar.decode(document.getElementById("cadena").value, txt); 
+   } else {
+       a[0].innerHTML += '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>¡Advertencia!</strong> Favor solo introducir numeros enteros positivos</div>';
+   }
 }
