@@ -4,19 +4,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Cifrado cesar</title>
+    <title>Cifrado Cesar</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="/img/proteger.png" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="container-fluid" id="cont">
-    <h1><i class="fas fas fa-shield-alt"></i>Cifrado cesar</h1>
+    
+    <h1><img src="img/proteger.svg" alt="insertar SVG con la etiqueta image" class="img-fluid">Cifrado Cesar</h1>
     <p>
         Este cifrado es solo un ejemplo del cifrado Cesar, aqui aplicaremos 
         el numero de caracteres que nosotros deseemos desplazar a traves del modulo de dicho numero. Para ello
         necesitamos tener un texto al que vamos a encriptar para luego desencriptarlo con el mismo numero de 
-        deplazamiento 
+        deplazamiento dentro del abcedario
+        
     </p>
+    <p>Iconos diseñados por <a href="https://www.flaticon.es/autores/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.es/" title="Flaticon"> www.flaticon.es</a></p>
     <!--
     <div class="alert alert-danger alert-dismissible">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -34,14 +39,14 @@
     </div>
     <div class="form-group row">
         <div class="col col-md-1"></div>
-        <div class="col col-md-5 card" >
+        <div class="col col-md-5 card mar-left" >
             <div class="card-body">
                 <p><strong>1</strong></p>
                 <label for="cadena">Texto a cifrar o descifrar:</label>
                 <textarea id="cadena" class="form-control" placeholder="Inserte el texto aqui" required></textarea>
             </div>
         </div>
-        <div class="col col-md-5 card">
+        <div class="col col-md-5 card mar-left">
             <div class="card-body">
                 <p><strong >2</strong></p>
                 <label for="mod">No.De deplazamiento</label>
@@ -52,7 +57,7 @@
     </div>
     <div class="form-group row">
         <div class="col col-md-1"></div>
-        <div class="col col-md-5 card">
+        <div class="col col-md-5 card mar-left">
             <div class="card-body btn-group btn-group-vertical">
                 <p><strong >3</strong></p>
                 <p>Seleccione alguna opción</p>
@@ -62,20 +67,21 @@
                 <input type="button" value="Descifrar" onclick="decodificar()" id="dec" class="form-control btn btn-primary">
             </div>
         </div>
-        <div class="col col-md-5 card">
+        <div class="col col-md-5 card mar-left">
             <div class="card-body">
                 <div ><strong>4</strong></div>
                 <label for="resultado">Resultado obtenido:</label>
-                <div id="resultado"></div>
+                <p id="resultado"></p>
             </div>
         </div>
         <div class="col col-md-1"></div>
     </div>
     <footer class="container-fluid bg-primary text-center fixed-bottom footer">
         <strong class="contanier text-white-50">
-            Pagina del cifrado cesar elaborada por Luis Fernando Tenorio Aspiros 5IV8
+            Pagina del cifrado Cesar elaborada por Luis Fernando Tenorio Aspiros 5IV8
         </strong>
     </footer>
+
     <!--<img src="img/paisaje.jpg" alt="" srcset="" class="rounded-circle">-->
     <script src="js/cifrado.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
