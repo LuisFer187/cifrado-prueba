@@ -69,39 +69,23 @@
     
  })();
 
- let regex = /^[0-9]+$/ig;
- let txt = document.getElementById("mod").value;
- let a = $(".add");
-
  //crear las funciones decodificar y codificar
  function codificar() {
-    if (regex.test(txt)) {
-        document.getElementById("resultado").innerHTML = 
-        cesar.encode(document.getElementById("cadena").value, txt); 
-    }else if (document.getElementById("cadena").value == "" && txt != "") {
+     let regex = /^[0-9]+$/ig;
+     let txt = document.getElementById("mod").value;
+     let a = $(".add");
+     if (document.getElementById("cadena").value == "") {
         //document. .innerHTML = '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>¡Advertencia!</strong> Favor de introducir algún texto al campo de texto</div>';
         a[0].innerHTML += '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>¡Advertencia!</strong> Favor de introducir algún texto al campo de texto</div>';
-    }else if(document.getElementById("cadena").value == "" && txt == ""){
-        a[0].innerHTML += '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>¡Advertencia!</strong> Favor de introducir algún valor dentro del campo de texto y numeros</div>';
-    }else if(document.getElementById("cadena").value != "" && txt == ""){
-        a[0].innerHTML += '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>¡Advertencia!</strong> Favor de introducir algún valor dentro del numero de desplazamiento</div>';
-    }else {
-        a[0].innerHTML += '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>¡Advertencia!</strong> Favor de no introducir numeros decimales o negativos</div>';
+    }else if (regex.test(txt)) {
+        document.getElementById("resultado").innerHTML = 
+        cesar.encode(document.getElementById("cadena").value, txt); 
+    } else {
+        a[0].innerHTML += '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>¡Advertencia!</strong> Favor solo introducir numeros enteros positivos</div>';
     }
  }
 
  function decodificar() {
-    if (regex.test(txt)) {
-        document.getElementById("resultado").innerHTML = 
-        cesar.decode(document.getElementById("cadena").value, txt); 
-    }else if (document.getElementById("cadena").value == "" && txt != "") {
-        //document. .innerHTML = '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>¡Advertencia!</strong> Favor de introducir algún texto al campo de texto</div>';
-        a[0].innerHTML += '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>¡Advertencia!</strong> Favor de introducir algún texto al campo de texto</div>';
-    }else if(document.getElementById("cadena").value == "" && txt == ""){
-        a[0].innerHTML += '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>¡Advertencia!</strong> Favor de introducir algún valor dentro del campo de texto y numeros</div>';
-    }else if(document.getElementById("cadena").value != "" && txt == ""){
-        a[0].innerHTML += '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>¡Advertencia!</strong> Favor de introducir algún valor dentro del numero de desplazamiento</div>';
-    }else {
-        a[0].innerHTML += '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>¡Advertencia!</strong> Favor de no introducir numeros decimales o negativos</div>';
-    }
+    document.getElementById("resultado").innerHTML = 
+    cesar.decode(document.getElementById("cadena").value, document.getElementById("mod").value);
 }

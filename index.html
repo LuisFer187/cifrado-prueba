@@ -12,8 +12,10 @@
 <body class="container-fluid" id="cont">
     <h1><i class="fas fas fa-shield-alt"></i>Cifrado cesar</h1>
     <p>
-        Este cifrado es solo un ejemplo del cifrado Cesar aqui aplicaremos 
-        el numero de caracteres que nosotros deseemos desplazar a traves del modulo de dicho nuumero.
+        Este cifrado es solo un ejemplo del cifrado Cesar, aqui aplicaremos 
+        el numero de caracteres que nosotros deseemos desplazar a traves del modulo de dicho numero. Para ello
+        necesitamos tener un texto al que vamos a encriptar para luego desencriptarlo con el mismo numero de 
+        deplazamiento 
     </p>
     <!--
     <div class="alert alert-danger alert-dismissible">
@@ -25,21 +27,25 @@
         <strong>¡Advertencia!</strong> Favor de introducir algún texto al campo de texto
     </div>
     -->
-    <div id="add" class="add"></div>
+    <div class="row">
+        <div class="col col-md-1"></div>
+        <div id="add" class="add col col-md-10"></div>
+        <div class="col col-md-1"></div>
+    </div>
     <div class="form-group row">
         <div class="col col-md-1"></div>
         <div class="col col-md-5 card" >
             <div class="card-body">
                 <p><strong>1</strong></p>
                 <label for="cadena">Texto a cifrar o descifrar:</label>
-                <textarea id="cadena" class="form-control" placeholder="Inserte el texto aqui"></textarea>
+                <textarea id="cadena" class="form-control" placeholder="Inserte el texto aqui" required></textarea>
             </div>
         </div>
         <div class="col col-md-5 card">
             <div class="card-body">
                 <p><strong >2</strong></p>
                 <label for="mod">No.De deplazamiento</label>
-                <input id="mod" class="form-control" type="number" placeholder="Introduce un numero entero">
+                <input id="mod" class="form-control" type="number" required="true" placeholder="Introduce un numero entero" >
             </div>
         </div>
         <div class="col col-md-1"></div>
